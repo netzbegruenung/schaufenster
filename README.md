@@ -25,4 +25,4 @@ Yodeck ist ein kommerzieller Anbieter. Der propritäre Client bzw. Player läuft
 auf Raspberry Pi. Die Nutzung mit einem einzigen Client/Player/Monitor ist
 kostenlos. Damit eignet sich Yodeck evtl. für kleine Büros.
 
-[`docs/yodeck.md`](/netzbegruenung/schaufenster/blog/master/docs/yodeck.md)
+[`docs/yodeck.md`](/netzbegruenung/schaufenster/blob/master/docs/yodeck.md)
