@@ -9,7 +9,7 @@ zentrale Admin-Oberfläche verfügt.
 
 ## Voraussetzungen
 
-- Raspberry Pi 2 oder neuer
+- Raspberry Pi 2 oder neuer (mit Netzteil)
 - Monitor mit HD-Anschluss
 - Kabel für Monitor, Stromversorgung
 - Wifi oder Ethernet-Netzwerk
@@ -28,6 +28,13 @@ herunter und entpacke die Datei.
 ```
 wget http://repo.yodeck.com/files/RaspberryPi_Yodeck.zip
 unzip RaspberryPi_Yodeck.zip
+```
+
+Für den Fall, dass du einen Raspberry Pi Zero W (sehr geringer Stromverbrauch) verwendest, musst du dir ein anderes Image laden, da dieser noch nicht [100% unterstützt wird](https://www.yodeck.com/news/raspberry-pi-zero-w-fullscreen/).
+
+```
+wget http://repo.yodeck.com/files/RaspberryPi_Yodeck_ZeroW_2018-01-15.zip
+unzip RaspberryPi_Yodeck_ZeroW_2018-01-15.zip
 ```
 
 ### 2. Schreibe das Image auf SD-Karte
@@ -115,6 +122,16 @@ Anleitung sprengen. Mit ein bisschen ausprobieren klappt das schon!
 Player übertragen werden. Dazu erscheint im Admin-Tool, sobald es
 änderungen gibt, ein roter Button, den Du anklickst, sobald Du möchtest,
 dass der Player die neuen Inhalte übernimmt.
+
+### Troubleshooting
+**Downloading media... bleibt hängen:** Ich hatte mehrmals den Fall, dass 
+sich das Gerät kurz mit dem Internet verbunden hat, in der Administrationssoftware 
+auch als *online* gekennzeichnet war und dann aber beim Herunterladen der Mediendateien
+hängen geblieben ist. Als ich dann die SD-Karte wieder am PC gemounted habe, waren 
+auch die `SETTINGS.txt` wieder im Orignialzustand. Ich vermute es lag daran, dass ich 
+für den Monitor online keine SSID und Netzwerkschlüssel eingetragen habe und die Daten
+somit beim Synchronisieren zurückgesetzt wurden. Nachdem ich die Werte auch online
+eingetragen habe, lief alles wie am Schnürchen! :)
 
 ## Siehe auch
 
