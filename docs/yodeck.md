@@ -124,14 +124,13 @@ Player übertragen werden. Dazu erscheint im Admin-Tool, sobald es
 dass der Player die neuen Inhalte übernimmt.
 
 ### Troubleshooting
-**Downloading media... bleibt hängen:** Ich hatte mehrmals den Fall, dass 
-sich das Gerät kurz mit dem Internet verbunden hat, in der Administrationssoftware 
-auch als *online* gekennzeichnet war und dann aber beim Herunterladen der Mediendateien
-hängen geblieben ist. Als ich dann die SD-Karte wieder am PC gemounted habe, waren 
-auch die `SETTINGS.txt` wieder im Orignialzustand. Ich vermute es lag daran, dass ich 
-für den Monitor online keine SSID und Netzwerkschlüssel eingetragen habe und die Daten
-somit beim Synchronisieren zurückgesetzt wurden. Nachdem ich die Werte auch online
-eingetragen habe, lief alles wie am Schnürchen! :)
+**Downloading media... bleibt hängen:** Das Gerät verbindet sich kurz mit dem Internet, 
+und ist auch in der Administrationssoftware als *online* gekennzeichnet war, allerdings 
+bleibt es beim Herunterladen der Mediendateien hängen. Beim erneuten mounten der SD Karte ist 
+die `SETTINGS.txt` wieder im Orignialzustand. 
+Um dieses Problem zu lösen, muss in der Administrationssoftware für den Monitor das WLAN (SSID)
+und das entsprechende Passwort eintragen werden. Vermutlich wird es sonst mit leeren Werten in 
+der `SETTINGS.txt` überschrieben und die WLAN Verbinung kann nicht funktionieren.
 
 ## Siehe auch
 
