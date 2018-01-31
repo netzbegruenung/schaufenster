@@ -26,3 +26,10 @@ auf Raspberry Pi. Die Nutzung mit einem einzigen Client/Player/Monitor ist
 kostenlos. Damit eignet sich Yodeck evtl. für kleine Büros.
 
 [`docs/yodeck.md`](https://github.com/netzbegruenung/schaufenster/blob/master/docs/yodeck.md)
+
+### Screenly
+
+OpenSource alternative zu Yodeck. Sollte ähnlichen Umfang haben wie Yodeck, aber durch OS flexibler.
+Beschreibung folgt. 
+
+https://www.screenly.io/ose/
