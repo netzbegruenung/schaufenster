@@ -40,3 +40,13 @@ Liste mit Terminen als JSON Array. Jeder Termin enthält:
 - `title`: Titel des Termins
 - `start`: Start-Datum (oder Datum/Uhrzeit) des Termins
 - `end`: (optional) Enddatum (oder Datum/Uhrzeit) des Termins
+
+Beispiele:
+
+- [Der nächste Termin beim Grünen Ortsverband Rösrath](https://schaufenster-service.now.sh/events/?charset=utf8&num=1&ical_url=https%3A%2F%2Fgruene-roesrath.de%2Ftermine%2Fcal%2Fics%2F%3Ftype%3D150%26tx_cal_controller%255Bcalendar%255D%3D649)
+
+- [Die nächsten 3 Feiertage in Deutschland](https://schaufenster-service.now.sh/events/?num=3&ical_url=http%3A%2F%2Fwww.webcal.fi%2Fcal.php%3Fid%3D75%26rid%3Dics%26wrn%3D0%26wp%3D12%26wf%3D55)
+
+## Live Demo
+
+Der Service ist erreichbar unter https://schaufenster-service.now.sh/events/
