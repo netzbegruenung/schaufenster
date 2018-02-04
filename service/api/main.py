@@ -30,7 +30,8 @@ handlers = media.Handlers({
     'application/json': jsonhandler.JSONHandler(),
 })
 
-cors = CORS(allow_all_origins=True)
+cors = CORS(allow_all_origins=True,
+            allow_all_headers=True)
 
 app = falcon.API(middleware=[cors.middleware])
 
