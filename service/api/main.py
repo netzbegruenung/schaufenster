@@ -3,6 +3,7 @@
 import falcon
 from falcon import media
 import logging
+from falcon_cors import CORS
 from . import events
 from . import jsonhandler
 
@@ -29,7 +30,9 @@ handlers = media.Handlers({
     'application/json': jsonhandler.JSONHandler(),
 })
 
-app = falcon.API()
+cors = CORS(allow_origins_list=['*'])
+
+app = falcon.API(middleware=[cors.middleware])
 
 app.req_options.media_handlers = handlers
 app.resp_options.media_handlers = handlers
