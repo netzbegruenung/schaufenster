@@ -5,6 +5,7 @@ import icalendar
 from datetime import datetime
 from datetime import date
 
+
 class Client(object):
 
     def __init__(self, url, charset=None):
@@ -12,9 +13,10 @@ class Client(object):
         self.charset = charset
         self.events = []
         self.__load()
+        self.timeout = 20
 
     def __load(self):
-        r = requests.get(self.url)
+        r = requests.get(self.url, timeout=self.timeout)
         r.raise_for_status()
 
         # requests normally uses encoding returned by "Content-type" header.

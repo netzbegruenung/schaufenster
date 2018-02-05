@@ -23,6 +23,8 @@ class EventsResource(object):
 
         client = events.Client(url=ical_url, charset=charset)
         next_events = client.next_events(num)
+        del client
+        
         resp.media = next_events
 
 
