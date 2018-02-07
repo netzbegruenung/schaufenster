@@ -12,8 +12,8 @@ class Client(object):
         self.url = url
         self.charset = charset
         self.events = []
-        self.__load()
         self.timeout = 20
+        self.__load()
 
     def __load(self):
         r = requests.get(self.url, timeout=self.timeout)
