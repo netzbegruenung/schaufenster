@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
-import falcon
-from falcon import media
-import logging
-from falcon_cors import CORS
 from . import events
 from . import jsonhandler
+from datetime import datetime
+from falcon import media
+from falcon_cors import CORS
+import falcon
+import logging
+import requests
 
 
 class EventsResource(object):
@@ -24,9 +26,27 @@ class EventsResource(object):
         client = events.Client(url=ical_url, charset=charset)
         next_events = client.next_events(num)
         del client
-        
-        resp.media = next_events
 
+        resp.media = next_events
+        maxage = 60 * 60  # 1 hour
+        resp.cache_control(["max_age=%d" % maxage])
+
+class ParticleSensorResource(object):
+
+    def on_get(self, req, resp, sensor_id):
+        """
+        Delivers data for a particular luftdaten.info sensor
+        """
+        url = "http://api.luftdaten.info/v1/sensor/%s/" % sensor_id
+        r = requests.get(url)
+
+        if r.status_code == 200:
+            maxage = 60 * 5  # 5 minutes
+            resp.cache_control = ["max_age=%d" % maxage]
+            resp.media = r.json()
+        else:
+            resp.media = r.text
+            resp.status = str(r.status_code) + " Unknown Error"
 
 handlers = media.Handlers({
     'application/json': jsonhandler.JSONHandler(),
@@ -41,3 +61,4 @@ app.req_options.media_handlers = handlers
 app.resp_options.media_handlers = handlers
 
 app.add_route('/events/', EventsResource())
+app.add_route('/luftdaten.info/v1/sensor/{sensor_id}/', ParticleSensorResource())

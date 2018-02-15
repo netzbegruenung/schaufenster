@@ -47,6 +47,16 @@ Beispiele:
 
 - [Die nächsten 3 Feiertage in Deutschland](https://schaufenster-service.now.sh/events/?num=3&ical_url=http%3A%2F%2Fwww.webcal.fi%2Fcal.php%3Fid%3D75%26rid%3Dics%26wrn%3D0%26wp%3D12%26wf%3D55)
 
-## Live Demo
+### Live Demo
 
 Der Service ist erreichbar unter https://schaufenster-service.now.sh/events/
+
+
+### `GET /luftdaten.info/v1/sensor/{sensor_id}/` - Aktuelle Messwerte eines luftdaten.info Sensors ausgeben
+
+Mit dieser Methode können Feinstaub-Messwerte eines luftdaten.info Sensors
+abgerufen werden.
+
+Beispiel:
+
+- https://schaufenster-service.now.sh/luftdateninfo/v1/sensor/6316/
