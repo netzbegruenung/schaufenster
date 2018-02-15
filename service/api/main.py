@@ -29,7 +29,7 @@ class EventsResource(object):
 
         resp.media = next_events
         maxage = 60 * 60  # 1 hour
-        resp.cache_control(["max_age=%d" % maxage])
+        resp.cache_control = ["max_age=%d" % maxage]
 
 class ParticleSensorResource(object):
 
