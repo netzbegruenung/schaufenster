@@ -30,6 +30,12 @@ kostenlos. Damit eignet sich Yodeck evtl. für kleine Büros.
 ### Screenly
 
 OpenSource alternative zu Yodeck. Sollte ähnlichen Umfang haben wie Yodeck, aber durch OS flexibler.
-Beschreibung folgt. 
+Beschreibung folgt.
 
 https://www.screenly.io/ose/
+
+## Software
+
+Im Unterordner `service` entsteht Software zur Erzeugung dynamischer
+HTML-Inhalte, die für Digital Signage eingesetzt werden können. Dokumentation
+folgt, sobald diese Software einsatzfähig ist.
