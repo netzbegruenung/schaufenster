@@ -2,6 +2,7 @@
 
 from . import events
 from . import jsonhandler
+from . import feeds
 from datetime import datetime
 from falcon import media
 from falcon_cors import CORS
@@ -30,6 +31,17 @@ class EventsResource(object):
         resp.media = next_events
         maxage = 60 * 60  # 1 hour
         resp.cache_control = ["max_age=%d" % maxage]
+
+class FeedResource(object):
+
+    def on_get(self, req, resp):
+        feed_url = req.get_param("url", required=True)
+        num = int(req.get_param("num", required=False, default="1"))
+        c = feeds.Client(feed_url)
+        resp.media = {
+            "meta": c.metadata(),
+            "items": c.recent_items(num=num)
+        }
 
 class ParticleSensorResource(object):
 
@@ -61,4 +73,5 @@ app.req_options.media_handlers = handlers
 app.resp_options.media_handlers = handlers
 
 app.add_route('/events/', EventsResource())
+app.add_route('/feed/', FeedResource())
 app.add_route('/luftdaten.info/v1/sensor/{sensor_id}/', ParticleSensorResource())
