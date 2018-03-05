@@ -12,6 +12,34 @@ Kalender zurück.
 
 ## API
 
+### `GET /feed/` - Beiträge eines RSS- oder Atom Feed ausgeben
+
+Request URL Parameter:
+
+- `url`: URL des Feed
+- `num`: Anzahl der Einträge, die zurück gegeben werden sollen (default: 1)
+
+Ausgabe:
+
+```json
+{
+  "meta": {
+    "title": "Die Grünen Rösrath",
+    "link": "http://gruene-roesrath.de",
+    "description": "",
+    "published": null
+  },
+  "items": [
+    {
+      "title": "Informationsveranstaltung zur Start-/Landebahnsanierung am Flughafen",
+      "summary": "Die Flughafen Köln/Bonn GmbH informiert am 1. März über die anstehende Sanierung der großen Start-...",
+      "link": "http://gruene-roesrath.de/startseite/news-detailansicht/article/informationsveranstaltung_zur_start_landebahnsanierung_am_flughafen/",
+      "published": "2018-02-19T20:15:00"
+    }
+  ]
+}
+```
+
 ### `GET /events/` - Die nächsten Termine eines iCal Kalenders ausgeben
 
 Request URL Parameter:

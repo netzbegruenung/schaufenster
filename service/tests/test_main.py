@@ -21,3 +21,10 @@ def test_get_events(client):
         "ical_url": "http://www.webcal.fi/cal.php?id=75&rid=ics&wrn=0&wp=12&wf=55"
     })
     assert response.status == falcon.HTTP_OK
+
+def test_get_feed(client):
+    response = client.simulate_get('/feed/', params={
+        "url": "http://www.feedforall.com/sample.xml",
+        "num": "1"
+    })
+    assert response.status == falcon.HTTP_OK
