@@ -4,6 +4,7 @@ import requests
 import icalendar
 from datetime import datetime
 from datetime import date
+from datetime import timedelta
 
 
 class Client(object):
@@ -12,7 +13,7 @@ class Client(object):
         self.url = url
         self.charset = charset
         self.events = []
-        self.timeout = 20
+        self.timeout = 60
         self.__load()
 
     def __load(self):
@@ -50,7 +51,7 @@ class Client(object):
         """
         Returns the next num events from the calendar
         """
-        now = datetime.utcnow()
+        now = datetime.utcnow() + timedelta(hours=5)
         out = []
         for event in self.events:
             end = event["end"]

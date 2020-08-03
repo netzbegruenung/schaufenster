@@ -1,4 +1,8 @@
-FROM python:3.6-alpine3.6
+FROM python:3.6-alpine3.8
+
+RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
+
+ENV PYTHONUNBUFFERED yes
 
 WORKDIR /app
 

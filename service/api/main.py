@@ -11,6 +11,21 @@ import logging
 import requests
 
 
+class IndexResource(object):
+    def __init__(self):
+        self.logger = logging.getLogger('api.' + __name__)
+    
+    def on_get(self, req, resp):
+        resp.media = {
+            "message": "Hallo! Hier läuft der Schaufenster-Service",
+            "url": "https://github.com/netzbegruenung/schaufenster",
+            "endpoints": [
+                "/events/",
+                "/feed/",
+                "/luftdaten.info/v1/sensor/{sensor_id}/",
+            ],
+        }
+
 class EventsResource(object):
 
     def __init__(self):
@@ -75,3 +90,4 @@ app.resp_options.media_handlers = handlers
 app.add_route('/events/', EventsResource())
 app.add_route('/feed/', FeedResource())
 app.add_route('/luftdaten.info/v1/sensor/{sensor_id}/', ParticleSensorResource())
+app.add_route('/', IndexResource())
