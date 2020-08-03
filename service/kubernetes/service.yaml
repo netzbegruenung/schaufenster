@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: schaufenster
+  namespace: marian
+spec:
+  selector:
+    app: schaufenster
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
