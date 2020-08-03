@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: schaufenster
+  namespace: marian
+spec:
+  rules:
+    - host: ingress.5jka7.k8s.gollum.westeurope.azure.gigantic.io
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: schaufenster
+              servicePort: 5000
