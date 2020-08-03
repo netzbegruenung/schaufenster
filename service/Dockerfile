@@ -1,4 +1,4 @@
-FROM python:3.6-alpine3.8
+FROM python:3.6-alpine3.12
 
 RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
 
